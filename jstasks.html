@@ -1,0 +1,84 @@
+/<!DOCTYPE html>
+<html>
+<title>Web Page Design</title>
+<head>
+<script>
+function sayHello() {
+   var library = [
+       {
+           title : "Javascript",
+           price : 500,
+           readers : [
+               {
+                   name : "Person 1",
+                   count : 300
+               },
+               {
+                   name : "Person 2",
+                   count : 400
+               }
+           ],
+           authorDetails : {
+               name : "Raj",
+               age : 40
+           }
+       },
+       {
+           title : "Nodejs",
+           price : 600,
+           readers : [],
+           authorDetails : {
+               name : "Raj",
+               age : 40
+           }
+       }
+];
+
+//  1.1 count update
+
+library[0].readers[1].count = 150;
+
+//  1.2 new key insertion
+library[0]["authorDetails"]["email"] =  "email1@gmail.com";
+library[1]["authorDetails"]["email"] =  "email2@gmail.com";
+
+//  1.3 new reader insertion
+library[1].readers.push({"name" : "Sudharsh", "age" : 21});
+
+//  1.4 new object insertion
+library.push({"title" : "SQL", "price" : 300, "readers" : [], "authorDetails" : {}});
+
+//  1.5 datatype of the age
+typeof(library[1].authorDetails.age);
+
+//  outputs:
+//  1.1 returns -   150
+document.write(library[0].readers[1].count+"<br>");
+
+//  1.2 returns -   email1@gmail.com
+//                  email2@gmail.com
+for(var i=0;i<library.length;i++)
+{
+   document.write(library[i].authorDetails.email+"<br>");
+}
+
+//  1.3 returns -   Sudharsh
+//                  21
+for(var i=0;i<1;i++)
+{
+   document.write(library[1].readers[i].name+"<br>");
+   document.write(library[1].readers[i].age+"<br>");
+}
+
+//  1.4 returns -   SQL
+document.write(library[2].title+"<br>");
+
+//  1.4 returns -   number
+document.write(typeof(library[1].authorDetails.age));
+
+}
+sayHello();
+</script>
+</head>
+
+</html>
